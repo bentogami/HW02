@@ -1,6 +1,7 @@
 #ifndef ARRAY_BASED_PD_H_
 #define ARRAY_BASED_PD_H_
 #include <string>
+#include <iostream>
 
 /** Specification file for the array-based phone directory.
  */
@@ -53,26 +54,31 @@ public:
 	void save();
 
 private:
-	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
-	{
+	class Directory_Entry /* Colin Bondy - Fixed Directory Entry */
+	{	
 	public:
-
+		//All Sarcasm aside I didn't feel comments necessary because the functions are self-explanatory
 		Directory_Entry() {} // Default no-argument constructor
 		Directory_Entry(std::string the_name, std::string the_number) {
-			// constructor not implemented yet
+			number = the_number;
+			name = the_name;
+			//3 words: Toughest. Constructor. Ever.
 		}
 		std::string get_name() const {
-			return ""; // method not implemented yet
+			return name;
+			//I've never seen this line before in my life.
 		}
 		std::string get_number() const {
-			return ""; // method not implemented yet
+			return number;
+			//You can have numbers in string?!
 		}
 		void set_number(const std::string& new_number) {
-			// method not implemented yet
+			number = new_number;
+			//This one tripped me up for, like, 2 hours.
 		}
-	
 	private:
-
+		std::string name, number;
+		//That was REAL difficult. Like, actually, because we forgot 'std::'.
 	};
 
 	// Private Functions

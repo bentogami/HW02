@@ -113,14 +113,25 @@ void Phone_Directory::save()
 	@return That person's name or an empty string
 	if not in the directory
 	*/
-string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
+string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: Team Colin/Chase, edited by Chase Lake
 {
-
 	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
 	// for (int i = index; i < size - 1; i++)
 		// the_directory[i] = the_directory[i + 1];
 
-	return "";
+	/*This is the requirement that it asked me to use,
+	but this wouldn't work if the array index was the same point as the size of the string.
+	*/
+	if (find(name) != name.size()) {
+		for (int i = find(name); i < size - 1; i++) {
+			the_directory[i] = the_directory[i + 1];
+		}
+		size -= 1;
+		return the_directory[find(name)].get_number();
+		//This line was annoying, but worked out. My syntax was wrong.
+	}
+	else
+		return "";
 }
 
 // Private method implementation
